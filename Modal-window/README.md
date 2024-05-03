@@ -1,7 +1,6 @@
 # Modal Window Project
 
 ### ScreenShot
-
 ![Modal Window](/assets/Modal%20window%20-%20Google%20Chrome%2003-May-24%203_27_06%20PM.png)
 
 
