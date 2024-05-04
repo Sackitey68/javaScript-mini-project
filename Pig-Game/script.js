@@ -6,8 +6,8 @@ const score1El = document.getElementById('score--1');
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 const btnRoll = document.querySelector('.btn--roll');
-const current0El = document.querySelector('.current--0');
-const current1El = document.querySelector('.current--1');
+const current0El = document.querySelector('#current--0');
+const current1El = document.querySelector('#current--1');
 
 let currentScore = 0
 
@@ -26,9 +26,11 @@ btnRoll.addEventListener('click', function () {
   // display the dice
   diceEl.src = `/assets/dice-${dice}.png`;
 
-  //   check if dice face is 1
-  if (dice === 1) {
+  //   check if dice face is not 1
+  if (dice !== 1) {
     currentScore += dice;
     current0El.textContent = currentScore
+  } else {
+
   }
 });
