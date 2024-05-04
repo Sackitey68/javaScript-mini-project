@@ -9,7 +9,8 @@ const btnRoll = document.querySelector('.btn--roll');
 const current0El = document.querySelector('#current--0');
 const current1El = document.querySelector('#current--1');
 
-let currentScore = 0
+let currentScore = 0;
+let activePlayer = 0;
 
 score0El.textContent = 0;
 score1El.textContent = 0;
@@ -29,8 +30,13 @@ btnRoll.addEventListener('click', function () {
   //   check if dice face is not 1
   if (dice !== 1) {
     currentScore += dice;
-    current0El.textContent = currentScore
+    current0El.textContent = currentScore;
   } else {
-
+    // Switching Player
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    currentScore = 10;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    player0El.classList.toggle('player--active');
+    player1El.classList.toggle('player--active');
   }
 });
