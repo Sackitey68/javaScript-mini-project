@@ -11,3 +11,6 @@ This is a simple JavaScript project that creates a [modal window](https://663501
 
 ### Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+
+### Acknowledgements
+- Inspired by Jonas Schmedtmann's "Complete JavaScript Course 2021: From Zero to Expert!" on Udemy
