@@ -6,14 +6,24 @@ const score1El = document.getElementById('score--1');
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 const btnRoll = document.querySelector('.btn--roll');
+const btnHold = document.querySelector('.btn--hold');
 const current0El = document.querySelector('#current--0');
 const current1El = document.querySelector('#current--1');
 
 let currentScore = 0;
 let activePlayer = 0;
+let scores = [0, 0];
 
 score0El.textContent = 0;
 score1El.textContent = 0;
+
+const switchPlayer = function () {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  currentScore = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
+};
 
 //Hide the dice when the game loads
 const diceEl = document.querySelector('.dice');
@@ -30,13 +40,30 @@ btnRoll.addEventListener('click', function () {
   //   check if dice face is not 1
   if (dice !== 1) {
     currentScore += dice;
-    current0El.textContent = currentScore;
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
   } else {
     // Switching Player
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    currentScore = 10;
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    player0El.classList.toggle('player--active');
-    player1El.classList.toggle('player--active');
+    switchPlayer();
+  }
+});
+
+btnHold.addEventListener('click', function () {
+  // Add current score to active player's score
+  scores[activePlayer] += currentScore;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
+
+  // check if active player score greater or equal to 100 and declare that player a winner
+  if (scores[activePlayer] >= 100) {
+    diceEl.classList.remove('hidden');
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.add('player--winner');
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove('player--active');
+  } else {
+    switchPlayer();
   }
 });
