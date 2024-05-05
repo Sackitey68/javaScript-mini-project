@@ -25,5 +25,7 @@
 - The game keeps track of the player's score, with points deducted for each incorrect guess.
 - The player's high score is displayed, encouraging repeated plays to beat previous scores.
 
+### Acknowledgements
+- Inspired by Jonas Schmedtmann's "Complete JavaScript Course 2021: From Zero to Expert!" on Udemy
 
 
