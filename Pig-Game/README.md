@@ -1,7 +1,7 @@
 # Pig Game
 
 ### screenShot
-![Pig Game](/assets/Pig%20Game%20-%20Google%20Chrome%2005-May-24%203_45_28%20PM.png)
+![Pig Game](/Pig-Game/assets/Pig%20Game%20-%20Google%20Chrome%2005-May-24%203_45_28%20PM.png)
 
 ### Introduction
 Welcome to the [Pig Game](https://6637a90e692e08f0a7f6826b--ubiquitous-cranachan-536935.netlify.app/) This is a simple dice game developed using HTML, CSS, and JavaScript. The objective of the game is to be the first player to reach a score of 100 points by rolling a dice and accumulating points.
