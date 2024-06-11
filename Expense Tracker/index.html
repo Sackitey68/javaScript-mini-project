@@ -1,38 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expense Tracker</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
         <h1>Expense Tracker</h1>
-    </header>
-    
-    <section class="main">
+      </header>
+
+      <section class="main-section">
         <div class="expense-details">
-            <div class="expense-name">
-                <p class="expense-text">Expense name</p>
-                <div>
-                    <input type="text" name="" id="name-input">
-                </div>
+          <div class="expense-name">
+            <p class="expense-text">Expense name</p>
+            <div class="text-input-div">
+              <input type="text" name="" id="name-input" />
             </div>
+          </div>
 
-            <div class="amount">
-                <p class="amount-text">Amount</p>
-                <div>
-                    <input type="number" name="" id="number-input">
-                </div>
+          <div class="amount">
+            <p class="amount-text">Amount</p>
+            <div class="number-input-div">
+              <input type="number" name="" id="number-input" />
             </div>
+          </div>
 
-            <div>
-
+          <div class="date-input-div">
+            <p class="date-text">Date</p>
+            <div class="date-input">
+              <input type="date" name="" id="date-input" />
             </div>
-
+          </div>
         </div>
-    </section>
-</body>
+
+        <div class="add-expense">
+          <button class="add-expense-btn">Add Expense</button>
+        </div>
+
+        <h3 class="expenses-h">Expenses</h3>
+
+        <div class="expense-data">
+          <p class="expense-history">Groceries - $50 - 2024-06-05</p>
+          <span><button class="delete">X</button></span>
+        </div>
+      </section>
+      <footer>
+        <p>  &#169; Developed by
+            <span><a href="https://github.com/Sackitey68">Isaac Sackitey</a></span
+            >. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

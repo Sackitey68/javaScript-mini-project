@@ -1,5 +1,115 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 762px;
+  height: 795px;
+  margin: 30px auto;
+  background-color: #e7e7e27c;
+}
+
+header h1 {
+  background-color: #424242;
+  text-align: center;
+  color: #f5f5f5;
+  padding: 30px;
+}
+
+.main-section {
+  box-shadow: -1px -1px 19px -3px rgba(0, 0, 0, 0.75);
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.expense-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expense-text,
+.amount-text,
+.date-text {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #424242;
+  border-radius: 5px;
+}
+
+.add-expense {
+  margin-top: 30px;
+}
+
+.add-expense button {
+  width: 97%;
+  background-color: #424242;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.add-expense button:hover {
+  background-color: #424242e3;
+}
+
+.expenses-h {
+  margin-top: 30px;
+  font-size: 23px;
+}
+
+.expense-data {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border: 2px solid #f5f5f5;
+  border-radius: 5px;
+  padding: 25px;
+  background-color: #e7e7e225;
+}
+
+/* .expense-history {} */
+
+.expense-history span {
+  display: inline-block;
+}
+
+.delete {
+  background-color: red;
+  outline: none;
+  border: none;
+  padding: 3px 6px;
+  color: white;
+}
+
+.delete:hover {
+  background-color: rgba(255, 0, 0, 0.699);
+}
+
+footer p {
+  text-align: center;
+  color: #000;
+  margin-top: 15px;
+}
+
+footer p a {
+  color: #424242;
+  text-decoration: none;
+  font-weight: 600;
 }
