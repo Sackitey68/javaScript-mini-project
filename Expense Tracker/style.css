@@ -75,13 +75,17 @@ input[type="date"] {
 }
 
 .expense-data {
-  display: flex;
-  justify-content: space-between;
   margin-top: 10px;
   border: 2px solid #f5f5f5;
   border-radius: 5px;
   padding: 25px;
   background-color: #e7e7e225;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
 }
 
 /* .expense-history {} */
@@ -90,15 +94,15 @@ input[type="date"] {
   display: inline-block;
 }
 
-.delete {
+.btn-delete {
   background-color: red;
   outline: none;
   border: none;
-  padding: 3px 6px;
+  padding: 3px 8px;
   color: white;
 }
 
-.delete:hover {
+.btn-delete:hover {
   background-color: rgba(255, 0, 0, 0.699);
 }
 
