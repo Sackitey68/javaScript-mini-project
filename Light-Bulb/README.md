@@ -1,12 +1,9 @@
 # Light-Bulb-On-And-Off-Project
 
-### ScreenShot
-
-![Light Bulb On And Off](/bulb.png)
 
 ### Overview
 
-[Light Bulb On And Off](https://66ab221423be03886a46a90d--fancy-meringue-0a6ad9.netlify.app/) This project demonstrates a simple implementation of a light bulb control system using HTML, CSS, and JavaScript. The primary functionality includes turning a light bulb on and off through a graphical user interface (GUI).
+[Light Bulb On And Off](https://66ab221423be03886a46a90d--fancy-meringue-0a6ad9.netlify.app/). This project demonstrates a simple implementation of a light bulb control system using HTML, CSS, and JavaScript. The primary functionality includes turning a light bulb on and off through a graphical user interface (GUI).
 
 ### Features
 
