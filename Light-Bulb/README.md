@@ -1,5 +1,8 @@
 # Light-Bulb-On-And-Off-Project
 
+### ScreenShot
+
+![Light Bulb On And Off](/https://github.com/Sackitey68/javaScript-mini-project/blob/master/Light-Bulb/bulb.png)
 
 ### Overview
 
