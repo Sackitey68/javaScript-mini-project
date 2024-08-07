@@ -12,6 +12,10 @@ body {
   background: #213947;
 }
 
+.container {
+  width: 600px;
+}
+
 .input-box {
   background: #fff;
   width: 90%;
@@ -36,4 +40,12 @@ input[type="password"] {
   font-size: 24px;
   cursor: pointer;
   color: #555;
+}
+
+.message {
+  position: absolute;
+  margin-top: 5px;
+  font-size: 18px;
+  color: #fff;
+  display: none;
 }
