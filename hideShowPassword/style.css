@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #250057;
+  background: #213947;
 }
 
 .input-box {
@@ -22,7 +22,8 @@ body {
   align-items: center;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 10px;
   border: none;
@@ -34,5 +35,5 @@ input[type="text"], input[type="password"] {
 .input-box ion-icon {
   font-size: 24px;
   cursor: pointer;
-  color: #ff69b4;
+  color: #555;
 }
