@@ -1,7 +1,9 @@
 const tasks = document.querySelector(".tasks");
 const addForm = document.querySelector(".add");
 const message = document.querySelector(".message");
+const clearAll = message.querySelector(".clear");
 
+// functionality to update footer counts
 function updateMessage() {
   const value = tasks.children.length;
   if (value <= 1) {
@@ -30,5 +32,11 @@ addForm.addEventListener("submit", function (event) {
                         <span>${addTask}</span> <i class="bi bi-trash-fill delete"></i>
                      </li>`;
   }
+  addForm.reset();
+  updateMessage();
+});
+
+clearAll.addEventListener("click", function () {
+  tasks.querySelectorAll("li").forEach((item) => item.remove());
   updateMessage();
 });
