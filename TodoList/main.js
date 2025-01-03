@@ -1,10 +1,22 @@
 const tasks = document.querySelector(".tasks");
 const addForm = document.querySelector(".add");
+const message = document.querySelector(".message");
+
+function updateMessage() {
+  const value = tasks.children.length;
+  if (value <= 1) {
+    message.querySelector("span").textContent = `You have ${value} task`;
+  } else {
+    message.querySelector("span").textContent = `You have ${value} tasks`;
+  }
+}
+updateMessage();
 
 //functionality to delete tasks
 tasks.addEventListener("click", function (event) {
   if (event.target.classList.contains("delete")) {
     event.target.parentElement.remove();
+    updateMessage();
   }
 });
 
@@ -18,4 +30,5 @@ addForm.addEventListener("submit", function (event) {
                         <span>${addTask}</span> <i class="bi bi-trash-fill delete"></i>
                      </li>`;
   }
+  updateMessage();
 });
