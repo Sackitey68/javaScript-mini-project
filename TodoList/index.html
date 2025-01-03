@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>TodoList</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrap">
+        <section class="heading">
+          <p class="title">TodoList</p>
+          <p class="subtitle">Manage and Search Your Pending Tasks in Clicks</p>
+        </section>
+
+        <section class="task-manager">
+          <div class="search-box">
+            <form class="search">
+              <input
+                type="text"
+                name="text"
+                id=""
+                placeholder="search"
+                autocomplete="off"
+              />
+              <i class="bi bi-x-circle reset"></i>
+            </form>
+          </div>
+          <div class="task-box">
+            <ul class="tasks">
+              <li>
+                <span>VD Recording</span>
+                <i class="bi bi-trash-fill delete"></i>
+              </li>
+              <li>
+                <span>Editing</span> <i class="bi bi-trash-fill delete"></i>
+              </li>
+              <li>
+                <span>AD Recording</span>
+                <i class="bi bi-trash-fill delete"></i>
+              </li>
+            </ul>
+            <form class="add">
+              <input
+                type="text"
+                name="task"
+                placeholder="add task"
+                autocomplete="off"
+              />
+              <input type="submit" value="add" />
+            </form>
+          </div>
+          <div class="message">
+            <span></span>
+            <button class="clear">Clear All</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
