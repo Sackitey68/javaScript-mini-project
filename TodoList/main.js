@@ -49,17 +49,19 @@ function searchQuery(query) {
     .forEach((item) => item.classList.add("hide"));
 
   Array.from(tasks.children)
-    .filter((item) => item.textContent.includes(query))
-    .forEach((item) => item.classList.toLowerCase().remove("hide"));
+    .filter((item) => item.textContent.toLowerCase().includes(query))
+    .forEach((item) => item.classList.remove("hide"));
 }
 
 search.addEventListener("keyup", function (event) {
-  const searchValue = event.target.value.toLowerCase().trim();
+  const searchValue = search.text.value.toLowerCase().trim();
   searchQuery(searchValue);
 });
 
 search.addEventListener("click", function (event) {
-  if(event.target.classList.contains("reset")) {
+  if (event.target.classList.contains("reset")) {
     search.reset();
+    const searchValue = search.text.value.toLowerCase().trim();
+    searchQuery(searchValue);
   }
 });
