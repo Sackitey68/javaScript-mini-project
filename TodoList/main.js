@@ -1,6 +1,7 @@
 const tasks = document.querySelector(".tasks");
 const addForm = document.querySelector(".add");
 const message = document.querySelector(".message");
+const search = document.querySelector(".search");
 const clearAll = message.querySelector(".clear");
 
 // functionality to update footer counts
@@ -37,6 +38,22 @@ addForm.addEventListener("submit", function (event) {
 });
 
 clearAll.addEventListener("click", function () {
-  tasks.querySelectorAll("li").forEach((item) => item.remove());
+  tasks.children.forEach((item) => item.remove());
   updateMessage();
+});
+
+// Search Query
+function searchQuery(query) {
+  Array.from(tasks.children)
+    .filter((item) => !item.textContent.includes(query))
+    .forEach((item) => item.classList.add("hide"));
+
+  Array.from(tasks.children)
+    .filter((item) => item.textContent.includes(query))
+    .forEach((item) => item.classList.remove("hide"));
+}
+
+search.addEventListener("keyup", function (event) {
+  const searchValue = event.target.value.trim();
+  searchQuery(searchValue);
 });
