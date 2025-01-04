@@ -38,7 +38,7 @@ addForm.addEventListener("submit", function (event) {
 });
 
 clearAll.addEventListener("click", function () {
-  tasks.children.forEach((item) => item.remove());
+  Array.from(tasks.children).forEach((item) => item.remove());
   updateMessage();
 });
 
