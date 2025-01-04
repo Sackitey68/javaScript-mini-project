@@ -45,15 +45,21 @@ clearAll.addEventListener("click", function () {
 // Search Query
 function searchQuery(query) {
   Array.from(tasks.children)
-    .filter((item) => !item.textContent.includes(query))
+    .filter((item) => !item.textContent.toLowerCase().includes(query))
     .forEach((item) => item.classList.add("hide"));
 
   Array.from(tasks.children)
     .filter((item) => item.textContent.includes(query))
-    .forEach((item) => item.classList.remove("hide"));
+    .forEach((item) => item.classList.toLowerCase().remove("hide"));
 }
 
 search.addEventListener("keyup", function (event) {
-  const searchValue = event.target.value.trim();
+  const searchValue = event.target.value.toLowerCase().trim();
   searchQuery(searchValue);
+});
+
+search.addEventListener("click", function (event) {
+  if(event.target.classList.contains("reset")) {
+    search.reset();
+  }
 });
