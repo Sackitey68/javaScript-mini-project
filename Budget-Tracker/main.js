@@ -52,14 +52,17 @@ function getTransaction() {
   });
 }
 
-getTransaction();
 
-function addTransaction() {
+// validity check
+function addTransaction(source, amount) {
+  if (!source || isNaN(amount) || amount === 0) {
+    return alert("Enter a valid source and amount");
+  }
   const time = new Date();
   const transaction = {
     id: Math.floor(Math.random() * 100000),
-    source: form.source.value,
-    amount: Number(form.amount.value),
+    source: source,
+    amount: amount,
     time: `${time.toLocaleTimeString()} ${time.toLocaleDateString()}`,
   };
 
@@ -75,12 +78,15 @@ function addTransaction() {
   updateStatistics();
 }
 
+
+// submit handler
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const source = form.source.value;
+  const source = form.source.value.trim();
   const amount = Number(form.amount.value);
   addTransaction(source, amount);
+  form.reset();
 });
 
 // functionality to delete transactions
@@ -95,6 +101,7 @@ incomeDom.addEventListener("click", function (event) {
   if (event.target.classList.contains("delete")) {
     event.target.parentElement.remove();
     deleteTransaction(Number(event.target.parentElement.dataset.id));
+    updateStatistics();
   }
 });
 
@@ -102,6 +109,7 @@ expenseDom.addEventListener("click", function (event) {
   if (event.target.classList.contains("delete")) {
     event.target.parentElement.remove();
     deleteTransaction(Number(event.target.parentElement.dataset.id));
+    updateStatistics();
   }
 });
 
@@ -120,4 +128,9 @@ function updateStatistics() {
   balance.textContent = incomeTotal - expenseTotal;
 }
 
-updateStatistics();
+function init() {
+  updateStatistics();
+  getTransaction();
+}
+
+init();
