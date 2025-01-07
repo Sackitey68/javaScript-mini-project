@@ -1,7 +1,6 @@
 const form = document.querySelector(".add");
 const incomeDom = document.querySelector("ul.income-list");
 const expenseDom = document.querySelector("ul.expense-list");
-console.log(incomeDom);
 
 //Check if the local storage has transactions saved
 let transactions =
@@ -15,11 +14,12 @@ function template(id, source, amount, time) {
                     <span>${source}</span>
                     <span id="time">${time}</span>
                  </p>
-                     $<span>${amount}</span>
+                     $<span>${Math.abs(amount)}</span>
                      <i class="bi bi-trash delete"></i>
                 </li>`;
 }
 
+// check whether its an expense or income
 function transactionsDom(id, source, amount, time) {
   if (amount > 0) {
     incomeDom.innerHTML += template(id, source, amount, time);
@@ -27,6 +27,32 @@ function transactionsDom(id, source, amount, time) {
     expenseDom.innerHTML += template(id, source, amount, time);
   }
 }
+
+
+// getTransaction from the local Storage
+function getTransaction() {
+  transactions.forEach((transaction) => {
+    if (transaction.amount > 0) {
+      incomeDom.innerHTML += template(
+        transaction.id,
+        transaction.source,
+        transaction.amount,
+        transaction.time
+      );
+    } else {
+      expenseDom.innerHTML += template(
+        transaction.id,
+        transaction.source,
+        transaction.amount,
+        transaction.time
+      );
+    }
+  });
+}
+
+getTransaction();
+
+
 
 function addTransaction() {
   const time = new Date();
