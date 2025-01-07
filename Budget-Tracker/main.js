@@ -1,6 +1,7 @@
 const form = document.querySelector(".add");
 
-let transactions = [];
+//Check if the local storage has transactions saved
+let transactions = localStorage.getItem("transactions") !== null ? JSON.parse(localStorage.getItem("transactions")) : [];
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -11,6 +12,6 @@ form.addEventListener("submit", function (event) {
   };
 
   transactions.push(transaction);
+  localStorage.setItem("transactions", JSON.stringify(transactions));
 });
 
-console.log(transactions)
