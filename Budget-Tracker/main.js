@@ -1,6 +1,9 @@
 const form = document.querySelector(".add");
 const incomeDom = document.querySelector("ul.income-list");
 const expenseDom = document.querySelector("ul.expense-list");
+const balance = document.querySelector("#balance");
+const income = document.querySelector("#income");
+const expense = document.querySelector("#expense");
 
 //Check if the local storage has transactions saved
 let transactions =
@@ -69,6 +72,7 @@ function addTransaction() {
     transaction.amount,
     transaction.time
   );
+  updateStatistics();
 }
 
 form.addEventListener("submit", function (event) {
@@ -79,9 +83,9 @@ form.addEventListener("submit", function (event) {
   addTransaction(source, amount);
 });
 
+// functionality to delete transactions
 function deleteTransaction(id) {
   transactions = transactions.filter((transaction) => {
-    console.log(transaction.id, id);
     return transaction.id !== id;
   });
   localStorage.setItem("transactions", JSON.stringify(transactions));
@@ -100,3 +104,20 @@ expenseDom.addEventListener("click", function (event) {
     deleteTransaction(Number(event.target.parentElement.dataset.id));
   }
 });
+
+// Statistics in the Dom
+function updateStatistics() {
+  const incomeTotal = transactions
+    .filter((transaction) => transaction.amount > 0)
+    .reduce((total, transaction) => (total += transaction.amount), 0);
+
+  const expenseTotal = transactions
+    .filter((transaction) => transaction.amount < 0)
+    .reduce((total, transaction) => (total += Math.abs(transaction.amount)), 0);
+
+  income.textContent = incomeTotal;
+  expense.textContent = expenseTotal;
+  balance.textContent = incomeTotal - expenseTotal;
+}
+
+updateStatistics();
