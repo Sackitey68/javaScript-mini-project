@@ -28,7 +28,6 @@ function transactionsDom(id, source, amount, time) {
   }
 }
 
-
 // getTransaction from the local Storage
 function getTransaction() {
   transactions.forEach((transaction) => {
@@ -51,8 +50,6 @@ function getTransaction() {
 }
 
 getTransaction();
-
-
 
 function addTransaction() {
   const time = new Date();
@@ -80,4 +77,26 @@ form.addEventListener("submit", function (event) {
   const source = form.source.value;
   const amount = Number(form.amount.value);
   addTransaction(source, amount);
+});
+
+function deleteTransaction(id) {
+  transactions = transactions.filter((transaction) => {
+    console.log(transaction.id, id);
+    return transaction.id !== id;
+  });
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+}
+
+incomeDom.addEventListener("click", function (event) {
+  if (event.target.classList.contains("delete")) {
+    event.target.parentElement.remove();
+    deleteTransaction(Number(event.target.parentElement.dataset.id));
+  }
+});
+
+expenseDom.addEventListener("click", function (event) {
+  if (event.target.classList.contains("delete")) {
+    event.target.parentElement.remove();
+    deleteTransaction(Number(event.target.parentElement.dataset.id));
+  }
 });
