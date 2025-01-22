@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .search {
+        display: flex;
+        align-items: center;
+        border: 1px solid #000;
+        padding: 0.5rem;
+        border-radius: 5px;
+        width: 30px;
+        transition: width 0.6s ease;
+        margin-top: 5px;
+      }
+
+      .search:hover {
+        width: 330px;
+        animation: search_transition 0.6s ease;
+      }
+
+      @keyframes search_transition {
+        0% {
+          transform: skew(0deg, 0deg);
+        }
+        25% {
+          transform: skew(5deg, 5deg);
+        }
+
+        50% {
+          transform: skew(-5deg, -5deg);
+        }
+        100% {
+          transform: skew(0deg, 0deg);
+        }
+      }
+
+      header {
+        background-color: rgb(28, 78, 28);
+        padding: 5px;
+      }
+
+      .main-nav__items {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+      }
+
+      .main-nav__items {
+        list-style: none;
+      }
+
+      .main-nav__item a {
+        text-decoration: none;
+        padding: 5px;
+        color: white;
+  
+      }
+
+      .main-nav__item a:hover {
+        border-bottom: 5px solid white;
+        font-weight: bold;
+      }
+
+      #input__search {
+        border: none;
+        outline: none;
+        width: 100%;
+    
+      }
+
+      ion-icon {
+        font-size: 1.5rem;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+<header>
+<nav class="main-nav">
+    <ul class="main-nav__items">
+      <li class="main-nav__item"><a href="">About</a></li>
+      <li class="main-nav__item"><a href="">contact</a></li>
+      <li class="main-nav__item"><a href="">Leave</a></li>
+    </ul>
+  </nav>
+</header>
+    <div class="search">
+      <input type="search" name="" id="input__search" placeholder="search..." />
+      <ion-icon name="search-outline"></ion-icon>
+    </div>
+
+    <fieldset>
+      <legend>Shipping Address</legend>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" />
+      <br />
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" />
+      <br />
+      <label for="zip-code">ZIP Code:</label>
+      <input type="text" id="zip-code" name="zip-code" />
+    </fieldset>
+
+    <iframe src="https://www.youtube.com/embed/iAdan0P8D7c"  allowfullscreen></iframe>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

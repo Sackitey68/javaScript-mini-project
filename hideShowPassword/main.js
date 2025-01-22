@@ -5,6 +5,7 @@ const message = document.querySelector(".message");
 
 eyeIcon.addEventListener("click", function () {
   // Check the current type of the password input field and toggle it
+  
   if (password.type === "password") {
     password.type = "text"; //Show the password
     eyeIcon.setAttribute("name", "eye-outline"); // Change the eye icon to indicate visibility
